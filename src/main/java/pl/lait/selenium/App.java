@@ -21,9 +21,11 @@ public class App
         
         driver.get("http://newtours.demoaut.com"); 
         driver.findElement(By.linkText("SIGN-ON")).click();
-        sleep(2);
+        sleep(3);
         driver.findElement(By.linkText("REGISTER")).click();
+        sleep(3);
         driver.findElement(By.linkText("SUPPORT")).click();
+        sleep(3);
         driver.findElement(By.linkText("CONTACT")).click();
         sleep(3);
         driver.quit();
