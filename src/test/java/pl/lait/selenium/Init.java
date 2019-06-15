@@ -5,18 +5,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Init {
 
-	static WebDriver driver;
+	static WebDriver driver = null;
 
 	public static WebDriver getDriver() { // mamy metode getDriver
+		System.out.println("wewnątrz getDriver");
+		
 
 		System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\kmoki\\Downloads\\chromedriver_win32\\chromedriver.exe");
-
-		driver = new ChromeDriver(); // w ramach obiektu wywołujemy metodę
-
-		driver.get("http://newtours.demoaut.com");
+		
+		if(driver == null) {          //jeżeli jest nullem
+			driver = new ChromeDriver(); // w ramach obiektu wywołujemy metodę
+			driver.get("http://newtours.demoaut.com");
+			return driver;
+			
+				}
+		else {
 		return driver;
-	}
+	         }
+		}
 
 	public static void sleep(int seconds) {
 		try {
@@ -30,6 +37,7 @@ public class Init {
 	
 	public static void close() {
 		driver.quit();
+		driver = null;
 	}
 	
 }
