@@ -28,7 +28,7 @@ public class MainMenuTest {
 		driver = Init.getDriver();
 	}
 
-	@Ignore
+	//@Ignore
 	@Test
 	public void mainMenu() {
 	System.out.println("start testu mainMenu, przed new MP");	
@@ -45,6 +45,7 @@ public class MainMenuTest {
 		
 		title = driver.getTitle();
 		System.out.println(title);
+		Init.printScr(driver, "mainMenu", "testName");
 		
 		Init.sleep(1);
 	}
@@ -64,7 +65,7 @@ public class MainMenuTest {
 
 		Assert.assertTrue("Page title is wrong", title.equals("Find a Flight: Mercury Tours:"));
 	}
-
+    @Ignore
 	@Test
 	public void reservationTest() {
 		mp.singOnLinkClick();
