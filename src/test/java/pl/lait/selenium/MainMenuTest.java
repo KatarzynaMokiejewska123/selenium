@@ -10,10 +10,17 @@ import org.openqa.selenium.support.ui.Select;
 
 import PageObject.LoginPage;
 import PageObject.MainPage;
+import PageObject.ReservationPage;
+import PageObject.ReservationPage2;
 
 public class MainMenuTest {
 
 	WebDriver driver;
+	MainPage mp=new MainPage();	
+	LoginPage lp = new LoginPage();
+	ReservationPage rp= new ReservationPage();
+	ReservationPage2 rp2=new ReservationPage2();
+
 
 	@Before
 	public void start() {
@@ -21,10 +28,11 @@ public class MainMenuTest {
 		driver = Init.getDriver();
 	}
 
+	@Ignore
 	@Test
 	public void mainMenu() {
 	System.out.println("start testu mainMenu, przed new MP");	
-	MainPage mp=new MainPage();
+	
 	System.out.println("PO new MP przed contact CLICK");	
 	
 		String title = driver.getTitle();
@@ -41,13 +49,11 @@ public class MainMenuTest {
 		Init.sleep(1);
 	}
 
+	@Ignore
 	@Test
 	public void login() {
 		String title=driver.getTitle();
 		System.out.println(title);
-		
-		LoginPage lp = new LoginPage();
-		MainPage mp = new MainPage();
 		
 		mp.singOnLinkClick();
 		lp.loginAs("admdz", "qwe123");
@@ -59,6 +65,21 @@ public class MainMenuTest {
 		Assert.assertTrue("Page title is wrong", title.equals("Find a Flight: Mercury Tours:"));
 	}
 
+	@Test
+	public void reservationTest() {
+		mp.singOnLinkClick();
+		lp.loginAs("admdz", "qwe123");
+		rp.passengersCount("2");
+		rp.from("Frankfurt", "17", "5");
+		rp.to("London", "19", "6");
+		rp.airline("Blue Skies Airlines");
+		rp.serviceBusinesClass();
+		rp.continueButtonClick();
+		rp2.pass0("Kasia", "Aaa");
+		rp2.continueBtnclick();
+		
+	}
+	
 	@After
 	public void quit() {
 		Init.close();
