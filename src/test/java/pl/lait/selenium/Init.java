@@ -9,7 +9,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.Augmenter;
-
 public class Init {
 
 	static WebDriver driver = null;
@@ -58,6 +57,8 @@ public class Init {
 
 			try {
 				FileUtils.copyFile(srcFile, new File("target/"+ folderName +"/"+ testName +"-" + milis + ".png"));
+			//lub tak: FileUtils.copyFile(srcFile, new File("target/scrng")); zapisuje na dysku w podanej scierzce
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

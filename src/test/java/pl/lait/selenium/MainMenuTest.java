@@ -13,6 +13,7 @@ import PageObject.MainPage;
 import PageObject.ReservationPage;
 import PageObject.ReservationPage2;
 
+@Ignore
 public class MainMenuTest {
 
 	WebDriver driver;
