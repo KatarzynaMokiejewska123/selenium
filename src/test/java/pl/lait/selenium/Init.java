@@ -16,13 +16,13 @@ public class Init {
 
 		/*System.setProperty("webdriver.chrome.driver",
 				"C:\\Users\\kmoki\\Downloads\\chromedriver_win32\\chromedriver.exe");
-*/
-		//driver = new ChromeDriver(); // w ramach obiektu wywołujemy metodę
+
+		*///driver = new ChromeDriver(); // w ramach obiektu wywołujemy metodę
 		
 		URL url = null;
 				
 				try {
-					url=new URL("http://192.168.0.110:4444/wd/hub");
+					url=new URL("http://192.168.8.162:4444/wd/hub");
 				} catch (MalformedURLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
